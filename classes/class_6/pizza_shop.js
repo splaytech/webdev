@@ -1,23 +1,31 @@
 // Let's make a list (array) of pizzas we want to order
-let pizzaOrder = ["Pepperoni", "Cheese", "Hawaiian"];
+let pizzaOrder = ["Margharita", "Pepperoni", "Veggie"];
 
-// Let's see what pizzas we ordered
-console.log("Our pizza order:", pizzaOrder);
+// Let's see what pizzas we ordered.
+console.log("Our pizza order: ", pizzaOrder);
 
 // Let's add more pizzas to our order
-pizzaOrder.push("Meat Lovers");
-pizzaOrder.push("Margherita");
+pizzaOrder.push("Chicken");
 
-console.log("Our updated pizza order:", pizzaOrder);
+console.log("Our updated pizza order: ", pizzaOrder);
 
-// Let's check if we ordered a "Supreme" pizza
-let isSupremeOrdered = pizzaOrder.includes("Supreme");
+// console.log("Latest pizza that I ordered: ",pizzaOrder.pop());
 
-console.log("Is Supreme ordered?", isSupremeOrdered);
+// Array is of 2 types 
+// 1. Stack - Last In First Out (LIFO); Example - Lift and stack of plates
+// 2. Queue - First In First Out (FIFO); Example - Line in school.
 
-// Let's deliver the pizzas one by one
-for (let i = 0; i < pizzaOrder.length; i++) {
-  console.log("Delivering:", pizzaOrder[i]);
+// Let's check if we have ordered a "Veggie"
+let isVeggieOrdered = pizzaOrder.includes("Veggie");
+
+console.log("Is Veggie Ordered? ", isVeggieOrdered);
+
+// To deliver in a Queue
+for(let pizzaDelivered=0; pizzaDelivered < pizzaOrder.length; pizzaDelivered=pizzaDelivered+1) {
+  console.log("Delivering: ", pizzaOrder[pizzaDelivered]);
 }
 
-// We used a for loop to deliver each pizza. The loop starts at index 0 and goes until it's less than the length of the pizza order. Inside the loop, we print the pizza at the current index.
+// To deliver in a Stack
+while(pizzaOrder.length > 0) {
+  console.log("Delivering using stack: ", pizzaOrder.pop());
+}
